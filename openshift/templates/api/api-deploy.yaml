@@ -13,7 +13,7 @@ objects:
       name: ${NAME}${SUFFIX}
       labels:
         name: ${NAME}${SUFFIX}
-        app: ${APP_NAME}${SUFFIX}
+        app.kubernetes.io/part-of: ${APP_NAME}${SUFFIX}
         app-group: ${APP_GROUP}
         role: ${ROLE}
         env: ${TAG_NAME}
@@ -25,7 +25,7 @@ objects:
             - podSelector:
                 matchLabels:
                   role: ${AGENT_ROLE}
-                  app: ${APP_NAME}${SUFFIX}
+                  app.kubernetes.io/part-of: ${APP_NAME}${SUFFIX}
                   env: ${TAG_NAME}
               namespaceSelector:
                 matchLabels:
@@ -34,7 +34,7 @@ objects:
             - podSelector:
                 matchLabels:
                   role: ${PUBLIC_FRONTEND_ROLE}
-                  app: ${APP_NAME}${SUFFIX}
+                  app.kubernetes.io/part-of: ${APP_NAME}${SUFFIX}
                   env: ${TAG_NAME}
               namespaceSelector:
                 matchLabels:
@@ -43,7 +43,7 @@ objects:
             - podSelector:
                 matchLabels:
                   role: ${ADMIN_FRONTEND_ROLE}
-                  app: ${APP_NAME}${SUFFIX}
+                  app.kubernetes.io/part-of: ${APP_NAME}${SUFFIX}
                   env: ${TAG_NAME}
               namespaceSelector:
                 matchLabels:
@@ -55,7 +55,7 @@ objects:
       podSelector:
         matchLabels:
           role: ${ROLE}
-          app: ${APP_NAME}${SUFFIX}
+          app.kubernetes.io/part-of: ${APP_NAME}${SUFFIX}
           env: ${TAG_NAME}
   - kind: Secret
     apiVersion: v1
@@ -63,7 +63,7 @@ objects:
       name: ${NAME}${SUFFIX}
       labels:
         name: ${NAME}${SUFFIX}
-        app: ${APP_NAME}${SUFFIX}
+        app.kubernetes.io/part-of: ${APP_NAME}${SUFFIX}
         app-group: ${APP_GROUP}
         role: ${ROLE}
         env: ${TAG_NAME}
@@ -81,7 +81,7 @@ objects:
         description: Exposes and load balances the application pods
       labels:
         name: ${NAME}${SUFFIX}
-        app: ${APP_NAME}${SUFFIX}
+        app.kubernetes.io/part-of: ${APP_NAME}${SUFFIX}
         app-group: ${APP_GROUP}
         role: ${ROLE}
         env: ${TAG_NAME}
@@ -101,7 +101,7 @@ objects:
         description: Defines how to deploy the application server
       labels:
         name: ${NAME}${SUFFIX}
-        app: ${APP_NAME}${SUFFIX}
+        app.kubernetes.io/part-of: ${APP_NAME}${SUFFIX}
         app-group: ${APP_GROUP}
         role: ${ROLE}
         env: ${TAG_NAME}
@@ -127,7 +127,7 @@ objects:
           name: ${NAME}${SUFFIX}
           labels:
             name: ${NAME}${SUFFIX}
-            app: ${APP_NAME}${SUFFIX}
+            app.kubernetes.io/part-of: ${APP_NAME}${SUFFIX}
             app-group: ${APP_GROUP}
             role: ${ROLE}
             env: ${TAG_NAME}
@@ -246,7 +246,7 @@ objects:
       name: ${NAME}${SUFFIX}
       labels:
         name: ${NAME}${SUFFIX}
-        app: ${APP_NAME}${SUFFIX}
+        app.kubernetes.io/part-of: ${APP_NAME}${SUFFIX}
         app-group: ${APP_GROUP}
         role: ${ROLE}
         env: ${TAG_NAME}
